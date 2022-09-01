@@ -4,6 +4,7 @@ html{
 }
 
 body{
+    background-color:rgb(250, 248, 248);
     padding: 0;
     overflow: hidden;
     margin: 0;
@@ -17,9 +18,10 @@ body{
 }
 
 .sidebar{
+    line-height: 1px;
     position: fixed;
     height: 100vh;
-    padding: 1rem 3rem;
+    padding: 1rem 1rem;
     z-index: 2;
     display: grid;
     gap: 0rem;
@@ -27,7 +29,15 @@ body{
     justify-content: center;
     background-color: rgb(95, 95, 219);
     color: white;
+    transition: all .3s ease-in-out;
 }
+
+.dark_sidebar{
+    transition: all .3s ease-in-out;
+    background-color: rgb(44, 42, 42);
+}
+
+
 
 .sidebar > h1{
     text-shadow: 0 10px 10px rgba(0,0,0,.3);
@@ -48,13 +58,23 @@ body{
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
     color: rgb(50, 53, 224);
     background-color: white;
-    
     transform:translateX(10px);
 }
-h4 i{
-    background-color: transparent;
-    box-shadow:  0 5px 5px rgba(0, 0, 0, 0.06);
+
+.sidebar h4 i{
+    background-color: rgb(50, 53, 224);
+    width: 25px;
+    color: white;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    
 }
+.dark_sidebar h4 i{
+    background-color: rgb(121, 102, 102);
+}
+
 
 h4{
     text-shadow:  0 5px 5px rgba(0, 0, 0, 0.06);
@@ -73,8 +93,14 @@ h4{
     grid-column-end: -1;
     display: grid;
     align-items: start;
-    padding: .1rem 4rem;
+    padding: .1rem 5rem;
     background-color: white;
+    transition: all .3s ease-in-out;
+}
+
+.header_dark{
+    color: white;
+    background-color: rgb(43, 42, 42);
 }
 
 .header .h1{
@@ -114,6 +140,14 @@ h4{
     background-color: #fff;
     padding: 1rem;
     gap: 1rem;
+    transition: all .3s ease-in-out;
+}
+
+
+
+.search_dark{
+    color: white;
+    background-color: rgb(43, 42, 42);
 }
 
 .search input{
@@ -123,6 +157,12 @@ h4{
     width: 500px;
     border: none;
     outline: none;
+    transition: all .3s ease-in-out;
+
+}
+input.input{
+    color: white;
+    background-color: rgb(87, 85, 85);
 }
 
 .h2{
@@ -162,10 +202,17 @@ h4{
     padding: .5rem 1rem;
 }
 
+.btns button.btn_dark{
+    background-color: rgb(94, 91, 91);
+}
+
 .btns button:hover{
     background-color: rgb(140, 140, 223);
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgba(255, 255, 255, 0);
     box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+.btns button.btn_dark:hover{
+    background-color: rgb(68, 66, 66);
 }
 
 .h2 .p1{
@@ -186,10 +233,16 @@ h4{
 
 
 .main{
+    transition: all .3s ease-in-out;
     background-color:rgb(250, 248, 248);
     display: grid;
     grid-template-columns: 1fr 350px;
 }
+.main_dark{
+    color: white;
+    background-color: rgb(43, 42, 42);
+}
+
 .main .projects {
     margin: 0 2rem;
     height: 100vh;
@@ -217,6 +270,11 @@ h4{
     border-left:5px solid rgb(104, 104, 196) ;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.219);
 }
+.main .all_pro .pro_dark{
+    background-color: rgb(75, 60, 60);
+    color: white;
+    border-color: orange;
+}
 .main .all_pro .pro p{
     margin-top: 0;
     font-size: .7rem;
@@ -231,8 +289,12 @@ h4{
     opacity: .7;
 }
 .main .all_pro .pro .icon i{
+    transition: all .3s ease-in-out;
     color: rgb(25, 25, 44);
     text-shadow: 0 7px 5px rgba(0, 0, 0, 0.055);
+}
+.main .all_pro .pro_dark .icon i{
+    color: #ddd;
 }
 .main .all_pro .pro:hover{
     transform: scale(1.05);
@@ -262,6 +324,13 @@ h4{
     padding:.5rem 1rem;
     position: relative;
     background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.others .top_dark{
+    background-color: rgb(75, 60, 60);
+    color: white;
+
 }
 .others .top h1:first-of-type{
     border: none;
@@ -286,7 +355,12 @@ h4{
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.103);
     background-color: white;
-   
+   transition: all .3s ease-in-out;
+}
+
+.f_dark{
+    background-color: rgb(75, 60, 60);
+    color: white;
 }
 
 .feature .f{
@@ -295,10 +369,15 @@ h4{
     display: flex;
     gap: 1rem;
     justify-content: start;
-    align-items: center;
-    
-    
+    align-items: center;   
 } 
+
+.dark{
+    cursor: pointer;
+}
+.dark:hover{
+   color: rgb(110, 110, 211);
+}
 
 .f .name h5{
     margin-bottom: 0;
@@ -324,4 +403,87 @@ h4{
     width: 100%;
     position: absolute;
     
+}
+
+
+@media(max-width:900px){
+    body{
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+   
+    .header h1{
+        font-size: .7rem;
+    }
+
+    .header p{
+        font-size: .5rem;
+    }
+    
+    .admin{
+        display: grid;
+        grid-template-columns:1fr;
+        height: 100vh;
+    }
+    .sidebar{
+        line-height: 1px;
+        position: static;
+        height: 100vh;
+        padding: 1rem 1rem;
+        z-index: 2;
+        display: none;
+        gap: 0rem;
+        align-content: start;
+        justify-content: center;
+        background-color: rgb(95, 95, 219);
+        color: white;
+    }
+    
+    .header .h1{
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+   
+    .header h1{
+        font-size: 1rem;
+    }
+    .bodys{
+        position: relative;
+        display: grid;
+        grid-template-rows:1fr;
+    }
+    .main{
+        background-color:rgb(250, 248, 248);
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .search input{
+        background-color: #eee;
+        padding: .3rem .4rem;
+        border-radius: 20px;
+        width: 500px;
+        border: none;
+        display: none;
+        outline: none;
+    }
+    .h2{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+    .main .projects {
+        margin: 0 2rem;
+        height: 100%;
+    }
+    .others{
+        line-height: 15px;
+        width: 200px;
+        margin-left: 0rem;
+       
+    }
 }
