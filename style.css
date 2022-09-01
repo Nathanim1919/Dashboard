@@ -34,6 +34,8 @@ body{
 }
 
 .sidebar h4{
+    padding: .2rem 1rem;
+    border-radius: 10px;
     cursor: pointer;
     font-size: .8rem;
     display: flex;
@@ -43,10 +45,14 @@ body{
     transition: all .3s ease-in-out;
 }
 .sidebar h4:hover{
-    color: #eee;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    color: rgb(50, 53, 224);
+    background-color: white;
+    
     transform:translateX(10px);
 }
 h4 i{
+    background-color: transparent;
     box-shadow:  0 5px 5px rgba(0, 0, 0, 0.06);
 }
 
