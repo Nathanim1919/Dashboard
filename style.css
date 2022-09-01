@@ -225,6 +225,7 @@ h4{
     opacity: .7;
 }
 .main .all_pro .pro .icon i{
+    color: rgb(25, 25, 44);
     text-shadow: 0 7px 5px rgba(0, 0, 0, 0.055);
 }
 .main .all_pro .pro:hover{
